@@ -68,4 +68,4 @@ See [scripts/README.md](scripts/README.md) for instructions on regenerating PSD 
 
 ## License
 
-The PSD files and generation scripts are provided for testing purposes.
+[CC0 1.0 Universal](LICENSE) - dedicated to the public domain.
