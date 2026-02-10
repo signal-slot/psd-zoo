@@ -4,7 +4,31 @@ A comprehensive collection of PSD (Adobe Photoshop) test files covering a wide r
 
 ## Overview
 
-337 PSD files covering:
+337 PSD files organized into 19 categories:
+
+| Directory | Description | Files |
+|-----------|-------------|-------|
+| [adjustment/](adjustment/) | Adjustment layers | 22 |
+| [bevel/](bevel/) | Bevel & Emboss layer effects | 8 |
+| [blend_mode/](blend_mode/) | Layer blend modes | 28 |
+| [canvas/](canvas/) | Canvas sizes, orientations, and backgrounds | 15 |
+| [channel/](channel/) | Alpha and spot color channels | 4 |
+| [color_mode/](color_mode/) | Color modes and bit depths | 16 |
+| [document/](document/) | Document properties (resolution, guides, ICC profiles, etc.) | 19 |
+| [effect/](effect/) | Layer effects (shadows, glows, strokes, overlays, etc.) | 27 |
+| [fill/](fill/) | Fill and gradient layers | 14 |
+| [filter/](filter/) | Filter effects | 9 |
+| [group/](group/) | Layer groups and nesting | 17 |
+| [layer/](layer/) | Layer properties (opacity, transforms, visibility, etc.) | 44 |
+| [layer_comp/](layer_comp/) | Layer compositions | 5 |
+| [mask/](mask/) | Layer masks, vector masks, and clipping masks | 18 |
+| [misc/](misc/) | Miscellaneous test files | 3 |
+| [shape/](shape/) | Shape layers and paths | 15 |
+| [smart/](smart/) | Smart objects and smart filters | 9 |
+| [text/](text/) | Text layers and formatting | 47 |
+| [text_warp/](text_warp/) | Text warp styles | 17 |
+
+## Features Covered
 
 - **Color modes**: RGB, CMYK, Grayscale, Lab, Bitmap, Indexed, Multichannel, Duotone
 - **Bit depths**: 8-bit, 16-bit, 32-bit
@@ -34,70 +58,13 @@ https://fonts.google.com/specimen/Roboto
 
 ## Regenerating PSD Files
 
-### Prerequisites
-
-1. **Adobe Photoshop 2026** (or compatible version) installed and running
-2. **Roboto fonts** installed (Regular, Bold, Italic)
-3. **Windows** with PowerShell (scripts use COM automation)
-
-### Quick Start
-
-```powershell
-# Start Photoshop first, then run:
-powershell -ExecutionPolicy Bypass -File run_all.ps1
-```
-
-### Running Individual Scripts
-
-```powershell
-# Run a specific generation script
-powershell -ExecutionPolicy Bypass -File run_all.ps1 -Script gen_batch3.jsx
-```
-
-### Manual Execution
-
-```powershell
-# Connect to Photoshop via COM
-$ps = New-Object -ComObject Photoshop.Application
-
-# Execute a JSX script
-$ps.DoJavascriptFile("C:\path\to\psd-zoo\gen_batch1.jsx")
-```
-
-## Generation Scripts
-
-| Script | Description |
-|--------|-------------|
-| `create_psd.jsx` | Initial PSD files: bit depths, opacity, blend modes, groups, effects, masks, adjustments, text |
-| `create_psd_remaining.jsx` | Additional blend modes and basic features |
-| `create_all_psd.jsx` | Comprehensive set: layer properties, text formatting, shapes, smart objects |
-| `create_remaining2.jsx` | Remaining layer variations |
-| `create_final.jsx` | Final initial batch |
-| `create_emoji.jsx` | Emoji text layer |
-| `gen_text.jsx` | Text layer variations: alignment, caps, baseline, scaling, anti-aliasing |
-| `gen_fill.jsx` | Fill layers: gradients (linear, radial, angle, diamond, reflected), pattern, solid color |
-| `gen_adj.jsx` | Adjustment layers: all types with various parameters |
-| `gen_extra1.jsx` | Extra features: layer transforms, paths, complex layouts |
-| `gen_shapes.jsx` | Shape variations: rectangles, ellipses, strokes, path operations |
-| `gen_deep.jsx` | Deep nesting, many layers, stress tests, mask variants |
-| `gen_effects2.jsx` | More effects: satin, bevel styles, glow variants, drop shadow options |
-| `gen_text2.jsx` | More text: warp styles, paragraph formatting, mixed fonts, hyphenation |
-| `gen_misc2.jsx` | Miscellaneous: blend-if, knockout, layer comps, guides, color modes |
-| `gen_adj2.jsx` | More adjustments: channel mixer, fill layers, per-channel adjustments |
-| `gen_more.jsx` | Additional: smart filters, ICC profiles, 32-bit, gradient masks, vector masks |
-| `gen_batch1.jsx` | Batch 1: group masks, rasterized layers, paths, filters, text formatting, bevel techniques |
-| `gen_batch2.jsx` | Batch 2: rounded rects, artboards, indexed/multichannel modes, color tags, smart filter stack |
-| `gen_batch3.jsx` | Batch 3: feathered masks, gradients, alpha channels, transforms, adjustments (posterize, threshold, invert, B&W) |
-| `gen_batch4.jsx` | Batch 4: vertical text, shapes, smart objects, clipping chains, layer comps, 300 DPI, CMYK |
-| `gen_batch5.jsx` | Batch 5: styled layers, effects (satin, stroke, glow), multicolor text, ICC profiles, transparency |
-| `run_all.ps1` | PowerShell runner script for executing all JSX scripts via COM automation |
+See [scripts/README.md](scripts/README.md) for instructions on regenerating PSD files using Adobe Photoshop's COM automation.
 
 ## Notes
 
 - Some scripts may produce failures for certain features depending on the Photoshop version
 - No Japanese text is used; emoji text is included
 - All files are saved in PSD format with layers and alpha channels preserved
-- The `gen_test.jsx` script is a minimal test for verifying COM connectivity
 
 ## License
 
