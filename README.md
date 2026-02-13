@@ -4,28 +4,28 @@ A comprehensive collection of PSD (Adobe Photoshop) test files covering a wide r
 
 ## Overview
 
-337 PSD files organized into 19 categories:
+377+ PSD files organized into 19 categories:
 
 | Directory | Description | Files |
 |-----------|-------------|-------|
-| [adjustment/](adjustment/) | Adjustment layers | 22 |
-| [bevel/](bevel/) | Bevel & Emboss layer effects | 8 |
+| [adjustment/](adjustment/) | Adjustment layers | 30 |
+| [bevel/](bevel/) | Bevel & Emboss layer effects | 9 |
 | [blend_mode/](blend_mode/) | Layer blend modes | 28 |
 | [canvas/](canvas/) | Canvas sizes, orientations, and backgrounds | 15 |
 | [channel/](channel/) | Alpha and spot color channels | 4 |
 | [color_mode/](color_mode/) | Color modes and bit depths | 16 |
-| [document/](document/) | Document properties (resolution, guides, ICC profiles, etc.) | 19 |
-| [effect/](effect/) | Layer effects (shadows, glows, strokes, overlays, etc.) | 27 |
-| [fill/](fill/) | Fill and gradient layers | 14 |
+| [document/](document/) | Document properties (resolution, guides, ICC profiles, etc.) | 20 |
+| [effect/](effect/) | Layer effects (shadows, glows, strokes, overlays, contours) | 35 |
+| [fill/](fill/) | Fill and gradient layers | 17 |
 | [filter/](filter/) | Filter effects | 9 |
-| [group/](group/) | Layer groups and nesting | 17 |
-| [layer/](layer/) | Layer properties (opacity, transforms, visibility, etc.) | 44 |
+| [group/](group/) | Layer groups, nesting, and group effects | 19 |
+| [layer/](layer/) | Layer properties (opacity, fill opacity, blend-if, etc.) | 48 |
 | [layer_comp/](layer_comp/) | Layer compositions | 5 |
-| [mask/](mask/) | Layer masks, vector masks, and clipping masks | 18 |
+| [mask/](mask/) | Layer masks, vector masks, compound masks | 19 |
 | [misc/](misc/) | Miscellaneous test files | 3 |
-| [shape/](shape/) | Shape layers and paths | 15 |
-| [smart/](smart/) | Smart objects and smart filters | 9 |
-| [text/](text/) | Text layers and formatting | 47 |
+| [shape/](shape/) | Shape layers, paths, and path operations | 20 |
+| [smart/](smart/) | Smart objects, smart filters, and filter blend | 10 |
+| [text/](text/) | Text layers and formatting | 52 |
 | [text_warp/](text_warp/) | Text warp styles | 17 |
 
 ## Features Covered
@@ -34,17 +34,18 @@ A comprehensive collection of PSD (Adobe Photoshop) test files covering a wide r
 - **Bit depths**: 8-bit, 16-bit, 32-bit
 - **Blend modes**: All 27 blend modes (Normal through Luminosity, including Darker/Lighter Color)
 - **Layer types**: Raster, Text, Shape, Adjustment, Fill, Smart Object, Group
-- **Layer effects**: Drop Shadow, Inner Shadow, Outer Glow, Inner Glow, Bevel & Emboss (all styles), Satin, Color Overlay, Gradient Overlay, Stroke (inside/outside/center)
-- **Text features**: Fonts (Regular/Bold/Italic), alignment, warp styles (14 types), paragraph formatting, superscript/subscript, faux bold/italic, mixed styles/sizes/colors, vertical text, anti-aliasing modes
-- **Masks**: Layer masks, vector masks, dual masks, feathered masks, disabled masks
-- **Adjustments**: Brightness, Levels, Curves, Hue/Saturation, Color Balance, Photo Filter, Gradient Map, Posterize, Threshold, Invert, Black & White, Vibrance, Exposure, Selective Color, Channel Mixer
+- **Layer effects**: Drop Shadow, Inner Shadow, Outer Glow, Inner Glow, Bevel & Emboss (all styles), Satin, Color Overlay, Gradient Overlay, Stroke (inside/outside/center), custom contour curves (ShpC/CrPt), gloss contour, gradient fill stroke
+- **Text features**: Fonts (Regular/Bold/Italic), alignment, warp styles (14 types), paragraph formatting, superscript/subscript, faux bold/italic, mixed styles/sizes/colors, vertical text, anti-aliasing modes, per-character tracking, baseline shift
+- **Masks**: Layer masks, vector masks, dual masks, feathered masks, disabled masks, compound vector masks
+- **Adjustments**: Brightness, Levels (with output levels), Curves (multi-point), Hue/Saturation (colorize, per-color), Color Balance (per-tonal-range), Photo Filter (custom color), Gradient Map (5+ stops), Posterize, Threshold, Invert, Black & White, Vibrance, Exposure, Selective Color, Channel Mixer (RGB/monochrome)
 - **Filters**: Gaussian Blur, Motion Blur, Unsharp Mask, Noise, Median, Radial Blur, Twirl, Spherize, Emboss
-- **Smart filters**: Single and stacked smart filters on smart objects
-- **Shapes**: Rectangle, Ellipse, Rounded Rectangle, Triangle, Line, Polygon, with stroke and fill
-- **Paths**: Saved paths, bezier curves, multiple paths
+- **Smart filters**: Single and stacked smart filters, filter blend mode/opacity
+- **Shapes**: Rectangle, Ellipse, Rounded Rectangle (uniform/asymmetric corners), Triangle, Line, Polygon, path operations (add, subtract, intersect), vector stroke (line cap, join, custom dash)
+- **Paths**: Saved paths, bezier curves, multiple paths, compound paths
 - **Channels**: Alpha channels, spot color channels, saved selections
 - **Canvas**: Various sizes (1x1 to 4000x4000), resolutions (72-600 DPI), orientations
-- **Other**: Layer comps, guides, color tags, clipping masks, linked layers, artboards, ICC profiles (sRGB, Adobe RGB, ProPhoto RGB), blend-if, knockout, layer transforms
+- **Gradients**: Linear, Radial, Angle, Reflected, Diamond, 10-stop spectral, reverse/dither, offset position
+- **Other**: Layer comps, guides, color tags, clipping masks, linked layers, artboards, ICC profiles (sRGB, Adobe RGB, ProPhoto RGB), blend-if (split/feathered), fill opacity, knockout, layer transforms, group effects
 
 ## Fonts
 
