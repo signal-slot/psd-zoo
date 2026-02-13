@@ -4,28 +4,28 @@ A comprehensive collection of PSD (Adobe Photoshop) test files covering a wide r
 
 ## Overview
 
-377+ PSD files organized into 19 categories:
+417+ PSD files organized into 19 categories:
 
 | Directory | Description | Files |
 |-----------|-------------|-------|
-| [adjustment/](adjustment/) | Adjustment layers | 30 |
-| [bevel/](bevel/) | Bevel & Emboss layer effects | 9 |
+| [adjustment/](adjustment/) | Adjustment layers | 33 |
+| [bevel/](bevel/) | Bevel & Emboss layer effects | 10 |
 | [blend_mode/](blend_mode/) | Layer blend modes | 28 |
 | [canvas/](canvas/) | Canvas sizes, orientations, and backgrounds | 15 |
 | [channel/](channel/) | Alpha and spot color channels | 4 |
-| [color_mode/](color_mode/) | Color modes and bit depths | 16 |
+| [color_mode/](color_mode/) | Color modes and bit depths | 21 |
 | [document/](document/) | Document properties (resolution, guides, ICC profiles, etc.) | 20 |
-| [effect/](effect/) | Layer effects (shadows, glows, strokes, overlays, contours) | 35 |
-| [fill/](fill/) | Fill and gradient layers | 17 |
+| [effect/](effect/) | Layer effects (shadows, glows, strokes, overlays, contours) | 50 |
+| [fill/](fill/) | Fill and gradient layers | 23 |
 | [filter/](filter/) | Filter effects | 9 |
-| [group/](group/) | Layer groups, nesting, and group effects | 19 |
-| [layer/](layer/) | Layer properties (opacity, fill opacity, blend-if, etc.) | 48 |
+| [group/](group/) | Layer groups, nesting, and group effects | 20 |
+| [layer/](layer/) | Layer properties (opacity, fill opacity, blend-if, etc.) | 50 |
 | [layer_comp/](layer_comp/) | Layer compositions | 5 |
-| [mask/](mask/) | Layer masks, vector masks, compound masks | 19 |
+| [mask/](mask/) | Layer masks, vector masks, compound masks | 20 |
 | [misc/](misc/) | Miscellaneous test files | 3 |
-| [shape/](shape/) | Shape layers, paths, and path operations | 20 |
-| [smart/](smart/) | Smart objects, smart filters, and filter blend | 10 |
-| [text/](text/) | Text layers and formatting | 52 |
+| [shape/](shape/) | Shape layers, paths, and path operations | 21 |
+| [smart/](smart/) | Smart objects, smart filters, and filter blend | 12 |
+| [text/](text/) | Text layers and formatting | 55 |
 | [text_warp/](text_warp/) | Text warp styles | 17 |
 
 ## Features Covered
