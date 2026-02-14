@@ -10,7 +10,7 @@ function fillLayer(doc, name, r, g, b, region) {
     doc.selection.fill(c); doc.selection.deselect();
     return layer;
 }
-var B = "C:/Users/tasuku/com/github/signal-slot/psd-zoo/";
+var B = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok=0, fail=0;
 
 // deep_nesting_10

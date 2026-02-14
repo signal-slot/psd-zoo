@@ -4,7 +4,7 @@ function savePsd(doc, path) {
     var o = new PhotoshopSaveOptions(); o.alphaChannels = true; o.layers = true;
     doc.saveAs(f, o, true); doc.close(SaveOptions.DONOTSAVECHANGES);
 }
-var B = "C:/Users/tasuku/com/github/signal-slot/qtpsd/tests/auto/psdcore/qpsdparser/data/";
+var B = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok = 0, fail = 0;
 
 // fill_gradient_linear

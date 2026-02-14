@@ -19,7 +19,7 @@ function makeTextLayer(doc, name, text, x, y, size, r, g, b) {
     var c = new SolidColor(); c.rgb.red=r; c.rgb.green=g; c.rgb.blue=b; ti.color = c;
     return l;
 }
-var B = "C:/Users/tasuku/com/github/signal-slot/qtpsd/tests/auto/psdcore/qpsdparser/data/";
+var B = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok=0, fail=0;
 
 // --- smart_filter_blur ---

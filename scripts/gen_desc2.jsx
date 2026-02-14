@@ -4,7 +4,7 @@
 // Targets descriptor types: ChnM (channel mixer), HStr/Clrz (hue-sat colorize),
 //   phfl (photo filter custom), CrvA with many points, vstk (vector stroke),
 //   TxLr/Txtt (text ranges), smart filter blend descriptors
-var basePath = "C:/Users/tasuku/com/github/signal-slot/psd-zoo/";
+var basePath = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok = 0, fail = 0;
 
 function savePsd(doc, name) {

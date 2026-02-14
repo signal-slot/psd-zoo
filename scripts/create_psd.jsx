@@ -8,7 +8,7 @@ function savePsd(doc, path) {
     doc.close(SaveOptions.DONOTSAVECHANGES);
 }
 
-var basePath = "C:/Users/tasuku/com/github/signal-slot/qtpsd/tests/auto/psdcore/qpsdparser/data/";
+var basePath = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 
 // --- depth_16bit.psd ---
 (function() {

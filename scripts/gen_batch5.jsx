@@ -1,5 +1,5 @@
 // gen_batch5.jsx - Additional PSD test cases
-var basePath = "C:/Users/tasuku/com/github/signal-slot/psd-zoo/";
+var basePath = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok = 0, fail = 0;
 
 function savePsd(doc, name) {

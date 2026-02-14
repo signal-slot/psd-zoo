@@ -41,7 +41,7 @@ function fillLayer(doc, name, r, g, b, region) {
     return layer;
 }
 
-var basePath = "C:/Users/tasuku/com/github/signal-slot/qtpsd/tests/auto/psdcore/qpsdparser/data/";
+var basePath = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 
 // ============================================================
 // GROUP 1: Text layer tests (recreate with Roboto font)

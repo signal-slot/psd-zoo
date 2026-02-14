@@ -21,7 +21,7 @@ function mkAdj(typeID) {
     desc.putObject(charIDToTypeID("Usng"), charIDToTypeID("AdjL"), adjDesc);
     executeAction(charIDToTypeID("Mk  "), desc, DialogModes.NO);
 }
-var B = "C:/Users/tasuku/com/github/signal-slot/qtpsd/tests/auto/psdcore/qpsdparser/data/";
+var B = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok = 0, fail = 0;
 
 // adjustment_exposure

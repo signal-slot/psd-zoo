@@ -16,7 +16,7 @@ function makeShape(doc, name, colorR, colorG, colorB, shapeType, shapeDesc) {
     executeAction(charIDToTypeID("Mk  "), desc, DialogModes.NO);
     doc.activeLayer.name = name;
 }
-var B = "C:/Users/tasuku/com/github/signal-slot/psd-zoo/";
+var B = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok=0, fail=0;
 
 // shape_rect_small

@@ -38,7 +38,7 @@ function makeTextLayer(doc, name, text, x, y, size, r, g, b, fontPS) {
     return layer;
 }
 
-var basePath = "C:/Users/tasuku/com/github/signal-slot/qtpsd/tests/auto/psdcore/qpsdparser/data/";
+var basePath = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 
 // --- indexed_mode.psd ---
 (function() {

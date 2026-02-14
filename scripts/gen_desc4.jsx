@@ -6,7 +6,7 @@
 //   shape with gradient fill, effect noise, layer style scale
 //
 // Focuses on descriptor types completely missing from all previous test files.
-var basePath = "C:/Users/tasuku/com/github/signal-slot/psd-zoo/";
+var basePath = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok = 0, fail = 0;
 
 function savePsd(doc, name) {

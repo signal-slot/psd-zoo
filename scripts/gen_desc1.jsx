@@ -3,7 +3,7 @@
 //
 // Targets descriptor types: ShpC/CrPt (contour curves), large VlLs (many gradient stops),
 //   blendRange (blend-if), Objc nesting (effects), various UntF units (#Pxl, #Prc, #Ang)
-var basePath = "C:/Users/tasuku/com/github/signal-slot/psd-zoo/";
+var basePath = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok = 0, fail = 0;
 
 function savePsd(doc, name) {

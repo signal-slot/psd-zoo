@@ -64,7 +64,9 @@ if ($Script -ne "") {
         "gen_desc1.jsx",
         "gen_desc2.jsx",
         "gen_desc3.jsx",
-        "gen_desc4.jsx"
+        "gen_desc4.jsx",
+        "gen_desc5.jsx",
+        "gen_desc6.jsx"
     ) | ForEach-Object { Join-Path $basePath $_ } | Where-Object { Test-Path $_ }
 }
 

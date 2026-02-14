@@ -1,5 +1,5 @@
 // gen_batch1.jsx - More PSD features: paths, group masks, rasterized layers, etc.
-var basePath = "C:/Users/tasuku/com/github/signal-slot/psd-zoo/";
+var basePath = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok = 0, fail = 0;
 
 function savePsd(doc, name) {

@@ -5,7 +5,7 @@ function savePsd(doc, path) {
     doc.saveAs(f, o, true); doc.close(SaveOptions.DONOTSAVECHANGES);
 }
 function mk(name, w, h) { return app.documents.add(w||300, h||200, 72, name, NewDocumentMode.RGB, DocumentFill.WHITE); }
-var B = "C:/Users/tasuku/com/github/signal-slot/qtpsd/tests/auto/psdcore/qpsdparser/data/";
+var B = File($.fileName).parent.parent.fsName.replace(/\\/g, "/") + "/";
 var ok = 0, fail = 0;
 
 // text_bold
