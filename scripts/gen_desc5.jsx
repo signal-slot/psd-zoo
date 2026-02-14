@@ -487,11 +487,15 @@ try{(function(){
 // ==========================================
 try{(function(){
     var d = newDoc();
-    fillRect(d, 0, 0, 200, 200, 128, 128, 128, "Content");
-    // Paint a gradient for visual effect
-    var ly = d.artLayers.add(); ly.name = "Gradient"; d.activeLayer = ly;
-    d.selection.selectAll();
-    var gradDesc = new ActionDescriptor();
+    // Gradient fill layer (preserves gradient descriptor instead of rasterizing)
+    var mkDesc = new ActionDescriptor();
+    var mkRef = new ActionReference();
+    mkRef.putClass(sTID("contentLayer"));
+    mkDesc.putReference(cTID("null"), mkRef);
+    var gFillDesc = new ActionDescriptor();
+    var gradContent = new ActionDescriptor();
+    gradContent.putUnitDouble(cTID("Angl"), cTID("#Ang"), 0);
+    gradContent.putEnumerated(cTID("Type"), cTID("GrdT"), cTID("Lnr "));
     var grad = new ActionDescriptor();
     grad.putString(cTID("Nm  "), "BW");
     grad.putEnumerated(cTID("GrdF"), cTID("GrdF"), cTID("CstS"));
@@ -518,11 +522,11 @@ try{(function(){
     ts2.putInteger(cTID("Lctn"), 4096); ts2.putInteger(cTID("Mdpn"), 50);
     trns.putObject(cTID("TrnS"), ts2);
     grad.putList(cTID("Trns"), trns);
-    gradDesc.putObject(cTID("Grad"), cTID("Grdn"), grad);
-    gradDesc.putEnumerated(cTID("Type"), cTID("GrdT"), cTID("Lnr "));
-    gradDesc.putUnitDouble(cTID("Angl"), cTID("#Ang"), 0);
-    executeAction(cTID("Grdn"), gradDesc, DialogModes.NO);
-    d.selection.deselect();
+    gradContent.putObject(cTID("Grad"), cTID("Grdn"), grad);
+    gFillDesc.putObject(cTID("Type"), sTID("gradientLayer"), gradContent);
+    mkDesc.putObject(cTID("Usng"), sTID("contentLayer"), gFillDesc);
+    executeAction(cTID("Mk  "), mkDesc, DialogModes.NO);
+    d.activeLayer.name = "BW Gradient";
     // Posterize
     var desc = new ActionDescriptor();
     var ref = new ActionReference(); ref.putClass(cTID("AdjL"));

@@ -578,21 +578,33 @@ try {
 // ==========================================
 try {
     var doc = newDoc();
-    // Dark base for blend-if
-    var bg = doc.artLayers.add(); bg.name = "Dark Base"; doc.activeLayer = bg;
-    doc.selection.selectAll();
-    var cbg = new SolidColor(); cbg.rgb.red = 50; cbg.rgb.green = 50; cbg.rgb.blue = 50;
-    doc.selection.fill(cbg); doc.selection.deselect();
-    // Gradient layer for blend-if testing
-    var layer = doc.artLayers.add(); layer.name = "Blend If Split"; doc.activeLayer = layer;
-    doc.selection.selectAll();
-    var gDesc = new ActionDescriptor();
+    // Dark base for blend-if (solid color fill layer)
+    var mkBase = new ActionDescriptor();
+    var mkBaseRef = new ActionReference();
+    mkBaseRef.putClass(sTID("contentLayer"));
+    mkBase.putReference(cTID("null"), mkBaseRef);
+    var baseContent = new ActionDescriptor();
+    var baseSolid = new ActionDescriptor();
+    baseSolid.putObject(cTID("Clr "), cTID("RGBC"), makeRGBC(50, 50, 50));
+    baseContent.putObject(cTID("Type"), sTID("solidColorLayer"), baseSolid);
+    mkBase.putObject(cTID("Usng"), sTID("contentLayer"), baseContent);
+    executeAction(cTID("Mk  "), mkBase, DialogModes.NO);
+    doc.activeLayer.name = "Dark Base";
+    // Gradient fill layer for blend-if testing (preserves gradient descriptor)
+    var mkGrad = new ActionDescriptor();
+    var mkGradRef = new ActionReference();
+    mkGradRef.putClass(sTID("contentLayer"));
+    mkGrad.putReference(cTID("null"), mkGradRef);
+    var gradFillDesc = new ActionDescriptor();
+    var gradContent = new ActionDescriptor();
+    gradContent.putUnitDouble(cTID("Angl"), cTID("#Ang"), 0);
+    gradContent.putEnumerated(cTID("Type"), cTID("GrdT"), cTID("Lnr "));
     var gradDesc = makeGradientDesc("BW", [[0,0,0,0],[255,255,255,4096]], [[100,0],[100,4096]]);
-    gDesc.putObject(cTID("Grad"), cTID("Grdn"), gradDesc);
-    gDesc.putEnumerated(cTID("Type"), cTID("GrdT"), cTID("Lnr "));
-    gDesc.putUnitDouble(cTID("Angl"), cTID("#Ang"), 0);
-    executeAction(cTID("Grdn"), gDesc, DialogModes.NO);
-    doc.selection.deselect();
+    gradContent.putObject(cTID("Grad"), cTID("Grdn"), gradDesc);
+    gradFillDesc.putObject(cTID("Type"), sTID("gradientLayer"), gradContent);
+    mkGrad.putObject(cTID("Usng"), sTID("contentLayer"), gradFillDesc);
+    executeAction(cTID("Mk  "), mkGrad, DialogModes.NO);
+    doc.activeLayer.name = "Blend If Split";
     // Set blend-if with split (feathered) points: this layer 30/80 to 180/230
     var bDesc = new ActionDescriptor();
     var bRef = new ActionReference();

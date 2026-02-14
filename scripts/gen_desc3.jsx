@@ -724,10 +724,15 @@ try{(function(){
 // ==========================================
 try{(function(){
     var d = app.documents.add(200, 200, 72, "tmp", NewDocumentMode.RGB, DocumentFill.WHITE, 1, BitsPerChannelType.SIXTEEN);
-    var ly = d.artLayers.add(); ly.name = "16bit Content"; d.activeLayer = ly;
-    d.selection.selectAll();
-    // Apply gradient fill
-    var gradDesc = new ActionDescriptor();
+    // Gradient fill layer (preserves gradient descriptor instead of rasterizing)
+    var mkDesc = new ActionDescriptor();
+    var mkRef = new ActionReference();
+    mkRef.putClass(sTID("contentLayer"));
+    mkDesc.putReference(cTID("null"), mkRef);
+    var fillDesc = new ActionDescriptor();
+    var gradContent = new ActionDescriptor();
+    gradContent.putUnitDouble(cTID("Angl"), cTID("#Ang"), 45);
+    gradContent.putEnumerated(cTID("Type"), cTID("GrdT"), cTID("Lnr "));
     var grad = new ActionDescriptor();
     grad.putString(cTID("Nm  "), "16bit Grad");
     grad.putEnumerated(cTID("GrdF"), cTID("GrdF"), cTID("CstS"));
@@ -754,11 +759,11 @@ try{(function(){
     ts2.putInteger(cTID("Lctn"), 4096); ts2.putInteger(cTID("Mdpn"), 50);
     trns.putObject(cTID("TrnS"), ts2);
     grad.putList(cTID("Trns"), trns);
-    gradDesc.putObject(cTID("Grad"), cTID("Grdn"), grad);
-    gradDesc.putEnumerated(cTID("Type"), cTID("GrdT"), cTID("Lnr "));
-    gradDesc.putUnitDouble(cTID("Angl"), cTID("#Ang"), 45);
-    executeAction(cTID("Grdn"), gradDesc, DialogModes.NO);
-    d.selection.deselect();
+    gradContent.putObject(cTID("Grad"), cTID("Grdn"), grad);
+    fillDesc.putObject(cTID("Type"), sTID("gradientLayer"), gradContent);
+    mkDesc.putObject(cTID("Usng"), sTID("contentLayer"), fillDesc);
+    executeAction(cTID("Mk  "), mkDesc, DialogModes.NO);
+    d.activeLayer.name = "16bit Gradient";
     savePsd(d, "color_mode/depth_16bit_gradient"); ok++;
 })();}catch(e){fail++; $.writeln("depth_16bit_gradient: "+e);}
 
